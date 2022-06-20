@@ -8,7 +8,7 @@
  - Python 3.x<br>
  - Samtools 1.4</p>
  <br>
- <h3>2. Preparing a pileup file for </h3>
+ <h3>2. Preparing a pileup file</h3>
  <p> The first step consists in the production of a pileup file using Samtools <i>mpileup</i> that calculates for each position across the genome the depth coverage, the quality and content of the reads:</p>
  <p><code> samtools mpileup -a -f reference_genome.fasta file_sorted.bam > file_sorted.pileup</code></p>
  <p>where reference_genome.fasta is the genome of interest in .fasta format (provided with the parameter <code>-f</code>, and file_sorted.bam is the sorted bam file previously produced with samtools <i> sort</i> function. The <code>-a</code> parameter allows to consider positions that were not covered.</p>
