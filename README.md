@@ -12,8 +12,18 @@
  <p><code> samtools mpileup -a -f reference_genome.fasta file_sorted.bam > file_sorted.pileup</code></p>
  <p>where reference_genome.fasta is the genome of interest in .fasta format, and file_sorted.bam is the sorted bam file previously produced with samtools <i> sort</i> function.</p>
  <br>
- <h3>2. Calculating mean coverage of each coding gene and percentage of coding gene covered at &ge; 10x depth</h3>
- <p>To calculate the mean coverage of each coding gene and percentage of coding gene covered at &ge; 10x depth, you must provide a <i>species.gff</i> file (that contains the coordinates of each coding gene), a reference genome in <i>fasta</i> format (it must be the same version as the provided <i>gff</i> file), and your <i>file_coverage.txt</i> file previously obtained with bedtools genomecov.</p>
+ <h3>2. Generating a table of A, T, G, C and indels content</h3>
+ <p>The second step allows to formate a table that indicate the number of A, T, G, C and indels for each position of the genome. For that, we developed a perl script, named extract_info_from_pileup.pl, that takes the previously produced pileup file as an input (option <code>-p</code>).</p>
+  <p><code> perl extract_info_from_pileup.pl -p file_sorted.pileup -o ./</code></p>
+<p>The algorithm will produce a table, named info_from_pileup.tsv. We then simplify the table to retain only the major bases at each genomic position. Importantly, we used the IUPAC code to produce the major allele, so other letters than A, T, G and C may appear.</p>
+ <p><code>cut info_from_pileup.tsv -f 1,2,8 > result.tsv</code></p>
+
+
+
+
+
+
+
  <p>An example of reference genome in <i>fasta</i> format and corresponding <i>gff</i> file are provided in the <code>data</code> directory.</p>
  <p><code>python3 Scan_gene_coverage.py -p file_coverage.txt -f reference_genome.fasta -g reference_coordinates.gff -o output.txt</code></p>
  <br>
