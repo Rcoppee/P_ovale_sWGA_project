@@ -15,7 +15,7 @@
  <h3>3. Generating a table of A, T, G, C and indels content</h3>
  <p>The second step allows to formate a table that indicate the number of A, T, G, C and indels for each position of the genome. For that, we developed a perl script, named extract_info_from_pileup.pl, that takes the previously produced pileup file as an input (option <code>-p</code>).</p>
   <p><code> perl extract_info_from_pileup.pl -p file_sorted.pileup -o ./</code></p>
-<p>The algorithm will produce a table, named info_from_pileup.tsv. We then simplify the table to retain only the chrosomosome, the genomic position and the major base (that we named here result.tsv), using the <code>cut</code> function in Linux. Importantly, we used the IUPAC code to produce the major allele, so other letters than A, T, G and C may appear as the result of mixed alleles.</p>
+<p>The algorithm will produce a table, named info_from_pileup.tsv. We then simplify the table to retain only the chrosomosome, the genomic position and the major base (that we named here result.tsv), using the <i>cut</i> function in Linux. Importantly, we used the IUPAC code to produce the major allele, so other letters than A, T, G and C may appear as the result of mixed alleles.</p>
  <p><code>cut info_from_pileup.tsv -f 1,2,8 > result.tsv</code></p>
  <p>where info_from_pileup.tsv is the file previously produced, and the <code>-f</code> option allows to retain columns 1, 2 and 8 of the file.</p>
  <br>
