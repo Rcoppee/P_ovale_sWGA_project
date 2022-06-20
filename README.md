@@ -6,7 +6,8 @@
  <p>To use this pipeline, you need the following programs:</p>
  <p>- PERL 5<br>
  - Python 3.x<br>
- - Samtools 1.4<br></p>
+ - Samtools 1.4</p>
+ <br>
  <h3>2. Preparing a pileup file for </h3>
  <p> The first step consists in the production of a pileup file using Samtools <i>mpileup</i> that calculates for each position across the genome the depth coverage, the quality and content of the reads:</p>
  <p><code> samtools mpileup -a -f reference_genome.fasta file_sorted.bam > file_sorted.pileup</code></p>
