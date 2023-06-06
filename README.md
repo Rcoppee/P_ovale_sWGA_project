@@ -27,4 +27,6 @@
   <br>
  <h3>5. Citation</h3>
  <p>If you use this pipeline for your own work, please cite:</p>
- <p><i>In preparation.</i></p>
+ <p><b>Development and Optimization of a Selective Whole-Genome Amplification To Study Plasmodium ovale Spp.</b><br>
+DOI: https://doi.org/10.1128/spectrum.00726-22
+</p>
